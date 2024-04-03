@@ -30,13 +30,12 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          #images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          images: ${{ env.REGISTRY }}/bishal959/laravel
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+         
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          # tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: ${{ env.REGISTRY }}/bishal959/laravel:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           labels: ${{ steps.meta.outputs.labels }}
