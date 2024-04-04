@@ -79,6 +79,6 @@ RUN chown -R www-data:www-data /var/www/html
 
 RUN composer install
 
-EXPOSE 80
+EXPOSE 82
 
 CMD ["sh", "/start.sh"]
