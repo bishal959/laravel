@@ -63,6 +63,48 @@ RUN echo "\
             deny all;\n\
         }\n\
     }\n" > /etc/nginx/sites-available/default
+RUN echo "\
+APP_NAME=Laravel\n\
+APP_ENV=local\n\
+APP_KEY=base64:N6OrIf7AP6ivTg/i8AfiK4VDSFcae+ftVLBiT00HreM=\n\
+APP_DEBUG=true\n\
+APP_TIMEZONE=UTC\n\
+APP_URL=http://localhost\n\
+APP_LOCALE=en\n\
+APP_FALLBACK_LOCALE=en\n\
+APP_FAKER_LOCALE=en_US\n\
+APP_MAINTENANCE_DRIVER=file\n\
+APP_MAINTENANCE_STORE=database\n\
+BCRYPT_ROUNDS=12\n\
+LOG_CHANNEL=stack\n\
+LOG_STACK=single\n\
+LOG_DEPRECATIONS_CHANNEL=null\n\
+LOG_LEVEL=debug\n\
+SESSION_DRIVER=database\n\
+SESSION_LIFETIME=120\n\
+SESSION_ENCRYPT=false\n\
+SESSION_PATH=/\n\
+SESSION_DOMAIN=null\n\
+BROADCAST_CONNECTION=log\n\
+FILESYSTEM_DISK=local\n\
+QUEUE_CONNECTION=database\n\
+CACHE_STORE=database\n\
+CACHE_PREFIX=\n\
+MEMCACHED_HOST=127.0.0.1\n\
+REDIS_CLIENT=phpredis\n\
+REDIS_HOST=127.0.0.1\n\
+REDIS_PASSWORD=null\n\
+REDIS_PORT=6379\n\
+MAIL_MAILER=log\n\
+MAIL_HOST=127.0.0.1\n\
+MAIL_PORT=2525\n\
+MAIL_USERNAME=null\n\
+MAIL_PASSWORD=null\n\
+MAIL_ENCRYPTION=null\n\
+MAIL_FROM_ADDRESS=\"hello@example.com\"\n\
+MAIL_FROM_NAME=\"\${APP_NAME}\"\n\
+VITE_APP_NAME=\"\${APP_NAME}\"\n" > .env
+
 
 RUN echo "\
     #!/bin/sh\n\
