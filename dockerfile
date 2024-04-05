@@ -103,7 +103,7 @@ MAIL_PASSWORD=null\n\
 MAIL_ENCRYPTION=null\n\
 MAIL_FROM_ADDRESS=\"hello@example.com\"\n\
 MAIL_FROM_NAME=\"\${APP_NAME}\"\n\
-VITE_APP_NAME=\"\${APP_NAME}\"\n" > .env
+VITE_APP_NAME=\"\${APP_NAME}\"\n" > /var/www/html/.env
 
 
 RUN echo "\
