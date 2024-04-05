@@ -18,7 +18,8 @@ RUN apt install -y php8.2\
     php8.2-curl\
     php8.2-xml\
     php8.2-bcmath\
-    php8.2-pdo
+    php8.2-pdo\
+    nano
 
 # Install php-fpm
 RUN apt install -y php8.2-fpm php8.2-cli
