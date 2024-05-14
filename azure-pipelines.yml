@@ -20,7 +20,7 @@ jobs:
           steps:
             - script: |
                 sudo bash -c ' # Start of the deployment script
-                cd /home/sabin/laravelapp # Change directory to the Laravel app directory
+                cd /home/bishal/laravel # Change directory to the Laravel app directory
                 git pull # Pull the latest changes from the GitHub repository
                 apt update # Update package lists for dependencies
                 composer install # Install PHP dependencies using Composer
