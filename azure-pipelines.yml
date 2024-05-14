@@ -25,6 +25,6 @@ jobs:
                 apt update # Update package lists for dependencies
                 composer install # Install PHP dependencies using Composer
                 php artisan migrate # Run database migrations to ensure database structure is up to date
-                php artisan serve --port 80 & --host 0.0.0.0 # Start the Laravel server (Optional: use of "--port" and "--host")
+                php artisan serve --port 80 # Start the Laravel server (Optional: use of "--port" and "--host")
                 '
               displayName: 'Continuous Integration and Deployment' # Display name for this deployment step
