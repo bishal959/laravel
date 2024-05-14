@@ -20,11 +20,7 @@ jobs:
           steps:
             - script: |
                 sudo bash -c ' # Start of the deployment script
-                cd /home/bishal/laravel # Change directory to the Laravel app directory
-                git pull # Pull the latest changes from the GitHub repository
-                apt update # Update package lists for dependencies
-                composer install # Install PHP dependencies using Composer
-                php artisan migrate # Run database migrations to ensure database structure is up to date
-                php artisan serve --port 8000 --host 0.0.0.0 # Start the Laravel server (Optional: use of "--port" and "--host")
+                cd /home/bishal/ # Change directory to the Laravel app directory
+                ./laravel.sh
                 '
               displayName: 'Continuous Integration and Deployment' # Display name for this deployment step
