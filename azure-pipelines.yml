@@ -1,0 +1,30 @@
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  phpVersion: '8.3'
+
+jobs:
+  - deployment: VMDeploy
+    displayName: Web deploy
+    environment:
+      name: 'demo' # Name of the environment in Azure DevOps
+      resourceType: VirtualMachine # Specifies that deployment will happen on a virtual machine
+      resourceName: 'demo-vm' # Name of the Azure VM where deployment will occur
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - script: |
+                sudo bash -c ' # Start of the deployment script
+                cd /home/sabin/laravelapp # Change directory to the Laravel app directory
+                git pull # Pull the latest changes from the GitHub repository
+                apt update # Update package lists for dependencies
+                composer install # Install PHP dependencies using Composer
+                php artisan migrate # Run database migrations to ensure database structure is up to date
+                php artisan serve --port 8000 & --host 0.0.0.0 # Start the Laravel server (Optional: use of "--port" and "--host")
+                '
+              displayName: 'Continuous Integration and Deployment' # Display name for this deployment step
