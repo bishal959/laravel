@@ -11,9 +11,9 @@ jobs:
   - deployment: VMDeploy
     displayName: Web deploy
     environment:
-      name: 'demo' # Name of the environment in Azure DevOps
+      name: 'laravel' # Name of the environment in Azure DevOps
       resourceType: VirtualMachine # Specifies that deployment will happen on a virtual machine
-      resourceName: 'demo-vm' # Name of the Azure VM where deployment will occur
+      resourceName: 'bishal' # Name of the Azure VM where deployment will occur
     strategy:
       runOnce:
         deploy:
